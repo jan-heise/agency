@@ -1,0 +1,10 @@
+{
+  "preset": "psr12",
+  "exclude": [
+    "accounts",
+    "cache",
+    "plugins/kirby-env",
+    "plugins/layouts",
+    "sessions"
+  ]
+}
