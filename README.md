@@ -1,34 +1,50 @@
-<img src="http://getkirby.com/assets/images/github/plainkit.jpg" width="300">
+# Kirby Agency Template
 
+> A nice [Kirby](https://getkirby.com/) based piece of web software.
 
-**Kirby: the CMS that adapts to any project, loved by developers and editors alike.**  
-The Plainkit is a minimal Kirby setup with the basics you need to start a project from scratch. It is the ideal choice if you are already familiar with Kirby and want to start step-by-step.
+## Technical setup
 
-You can learn more about Kirby at [getkirby.com](https://getkirby.com).
+### Locale installation
 
-### Try Kirby for free  
-You can try Kirby and the Plainkit on your local machine or on a test server as long as you need to make sure it is the right tool for your next project. … and when you’re convinced, [buy your license](https://getkirby.com/buy).
+1. Clone repo, access folder
+    ```sh
+    git clone git@github.com:jan-heise/agency.git && cd agency
+    ```
+2. Copy, rename and edit `.env` file
+    ```sh
+    cp .env.example .env
+    ```
+3. Copy .env file into the .ddev folder to give DDEV access to the variables
+    ```
+    cp .env .ddev
+    ```
+4. Start the DDEV container _(Keys from your `~/.ssh` directory are automatically added via the post-start hook)_
+    ```sh
+    ddev start
+    ```
+5. Run DDEV setup _(Composer, npm, build process)_
+    ```sh
+    ddev setup
+    ```
+6. Update stage variables and domain info in the DDEV `update-content` command located in `.ddev/commands/web`.
+7. Download `content` folder from stage
+    ```sh
+    ddev update-content
+    ```
 
-### Get going
-Read our guide on [how to get started with Kirby](https://getkirby.com/docs/guide/quickstart).
+### Build process
 
-You can [download the latest version](https://github.com/getkirby/plainkit/archive/main.zip) of the Plainkit.  
-If you are familiar with Git, you can clone Kirby's Plainkit repository from Github.
+-   `ddev build` to run the build process
+-   `ddev watch` to run the watcher
 
-    git clone https://github.com/getkirby/plainkit.git
+### Utilities
 
-## What's Kirby?
-- **[getkirby.com](https://getkirby.com)** – Get to know the CMS.
-- **[Try it](https://getkirby.com/try)** – Take a test ride with our online demo. Or download one of our kits to get started.
-- **[Documentation](https://getkirby.com/docs/guide)** – Read the official guide, reference and cookbook recipes.
-- **[Issues](https://github.com/getkirby/kirby/issues)** – Report bugs and other problems.
-- **[Feedback](https://feedback.getkirby.com)** – You have an idea for Kirby? Share it.
-- **[Forum](https://forum.getkirby.com)** – Whenever you get stuck, don't hesitate to reach out for questions and support.
-- **[Discord](https://chat.getkirby.com)** – Hang out and meet the community.
-- **[Mastodon](https://mastodon.social/@getkirby)** – Spread the word.
-- **[Instagram](https://www.instagram.com/getkirby/)** – Share your creations: #madewithkirby.
+-   `ddev update-composer` to update and bump composer packages
+-   `ddev update-npm` to update NPM packages
 
----
+## DDEV Links
 
-© 2009-2022 Bastian Allgeier  
-[getkirby.com](https://getkirby.com) · [License agreement](https://getkirby.com/license)
+| Service    | URL                       |
+| :--------- |:--------------------------|
+| web        | https://agency.local      |
+| Mailhog    | https://agency.local:8026 |
