@@ -1,1 +1,7 @@
-<h1><?= $page->title() ?></h1>
+<?php
+
+layout();
+
+foreach ($page->blocks()->toBlocks() as $block) {
+  echo $block;
+}

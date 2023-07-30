@@ -24,7 +24,10 @@
   "require": {
     "php": ">=8.0.0 <8.3.0",
     "getkirby/cms": "^4.0.0-alpha.5",
-    "laravel/pint": "^1.10"
+    "laravel/pint": "^1.10",
+    "getkirby/layouts": "^2.0",
+    "diesdasdigital/kirby-meta-knight": "^1.2",
+    "beebmx/kirby-env": "^4.1"
   },
   "config": {
     "allow-plugins": {
