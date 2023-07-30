@@ -5,6 +5,7 @@
     "cache",
     "plugins/kirby-env",
     "plugins/layouts",
+    "plugins/kirby-meta-knight",
     "sessions"
   ]
 }

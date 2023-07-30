@@ -1,0 +1,7 @@
+#!/bin/bash
+
+npm run build
+./vendor/bin/pint site --test
+
+# Build all custom plguins
+.ddev/commands/web/build-plugins 'agency'
